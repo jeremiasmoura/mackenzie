@@ -49,6 +49,12 @@ Rel(extraction, bronze, "Persistir dados")
 Rel(oltp, olap, "Fornecer dados")
 Rel(ingestion, analytics, "Atualizar dados")
 
+Rel(bronze, transformation_bronze_silver, "Coletar dados")
+Rel(transformation_bronze_silver, silver, "Persistir dados transformados")
+
+Rel(silver, transformation_silver_gold, "Coletar dados")
+Rel(transformation_silver_gold, gold, "Persistir dados transformados")
+
 Rel(user, dash, "Visualizar")
 Rel(dash, gold, "Carregar dados")
 
@@ -56,6 +62,5 @@ Rel(dash, gold, "Carregar dados")
 Rel(data_scientist, ia, "Criar algoritimos de machine learning")
 Rel(ia, gold, "Carregar dataset para treinamento")
 
-Rel(transformation_silver_gold, silver, "Persistir dados transformados")
-Rel(gold, transformation_silver_gold, "Coletar dados")
+
 @enduml
